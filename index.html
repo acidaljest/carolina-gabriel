@@ -6,81 +6,86 @@
   <title>Carolina & Gabriel</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    :root{
+      --bg:#050505;
+      --gold:#c6a46a;
+      --gold-soft:#8f784c;
+      --white:#f5f5f5;
+    }
+
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: radial-gradient(circle at top, #1a1a1a, #000000);
-      color: #f5f5f5;
+      background: radial-gradient(circle at top, #111, var(--bg));
+      color: var(--white);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      overflow: hidden;
+      padding: 20px;
     }
 
     .container {
-      max-width: 420px;
-      padding: 50px 28px;
+      width: 100%;
+      max-width: 380px;
+      padding: 40px 22px;
       text-align: center;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
+      border: 1px solid rgba(198,164,106,0.25);
+      border-radius: 18px;
       background: rgba(255,255,255,0.02);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 0 40px rgba(0,0,0,0.6);
-      position: relative;
-      z-index: 1;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 30px rgba(0,0,0,0.7);
       opacity: 0;
       transform: translateY(20px);
       animation: fadeIn 1.2s ease forwards;
     }
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+    @media (min-width:768px){
+      .container{
+        max-width:420px;
+        padding:50px 30px;
       }
     }
 
+    @keyframes fadeIn {
+      to { opacity:1; transform:translateY(0); }
+    }
+
     h1 {
-      font-size: 30px;
+      font-size: 26px;
       font-weight: 600;
       letter-spacing: 1px;
       margin-bottom: 6px;
     }
 
     h2 {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 300;
       letter-spacing: 4px;
-      opacity: 0.7;
-      margin-bottom: 30px;
+      opacity: 0.6;
+      margin-bottom: 26px;
     }
 
     .divider {
       width: 50px;
       height: 1px;
-      background: linear-gradient(to right, transparent, #aaa, transparent);
-      margin: 20px auto;
+      background: linear-gradient(to right, transparent, var(--gold-soft), transparent);
+      margin: 18px auto;
     }
 
-    p {
-      font-size: 14px;
-      line-height: 1.6;
-    }
+    p { font-size: 13px; line-height: 1.6; }
 
-    .section {
-      margin-top: 35px;
-    }
+    .section { margin-top: 30px; }
 
     .button {
       display: inline-block;
-      margin-top: 18px;
-      padding: 12px 22px;
-      border: 1px solid rgba(255,255,255,0.4);
-      color: #fff;
+      margin-top: 16px;
+      padding: 11px 20px;
+      border: 1px solid rgba(198,164,106,0.4);
+      color: var(--white);
       text-decoration: none;
       border-radius: 40px;
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 1px;
       transition: all 0.35s ease;
       position: relative;
@@ -94,77 +99,55 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-      transition: all 0.5s ease;
+      background: linear-gradient(120deg, transparent, rgba(198,164,106,0.25), transparent);
+      transition: all 0.6s ease;
     }
 
-    .button:hover::before {
-      left: 100%;
-    }
+    .button:hover::before { left: 100%; }
 
     .button:hover {
-      background: #ffffff;
-      color: #000;
-      box-shadow: 0 0 12px rgba(255,255,255,0.4), 0 0 25px rgba(255,255,255,0.2);
-      transform: translateY(-2px);
-    }
-
-    .button:hover {
-      background: #ffffff;
-      color: #000;
+      background: rgba(198,164,106,0.15);
+      color: var(--white);
+      box-shadow: 0 0 10px rgba(198,164,106,0.25);
+      transform: translateY(-1px);
     }
 
     .bank {
       text-align: left;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.7;
-      margin-top: 18px;
-      background: rgba(255,255,255,0.03);
-      padding: 15px;
+      margin-top: 16px;
+      background: rgba(255,255,255,0.02);
+      padding: 14px;
       border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(198,164,106,0.15);
     }
 
     .footer {
-      margin-top: 45px;
-      font-size: 12px;
+      margin-top: 40px;
+      font-size: 11px;
       opacity: 0.5;
       letter-spacing: 1px;
+      color: var(--gold-soft);
     }
 
-    .glow {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent);
-      top: -100px;
-      right: -100px;
-      filter: blur(80px);
-      z-index: 0;
-    }
-
-    /* decorative lines */
     .line-top, .line-bottom {
       position: absolute;
       left: 50%;
       width: 60px;
       height: 1px;
-      background: rgba(255,255,255,0.3);
+      background: rgba(198,164,106,0.3);
       transform: translateX(-50%);
     }
 
-    .line-top {
-      top: 20px;
-    }
+    .line-top { top: 14px; }
+    .line-bottom { bottom: 14px; }
 
-    .line-bottom {
-      bottom: 20px;
-    }
+    .gold { color: var(--gold); }
 
   </style>
 </head>
 <body>
-  <div class="glow"></div>
 
   <div class="container">
     <div class="line-top"></div>
@@ -174,7 +157,7 @@
 
     <div class="divider"></div>
 
-    <p>Sábado 23 de mayo · 15:00 hrs<br>
+    <p><span class="gold">Sábado 23 de mayo</span> · 15:00 hrs<br>
     Corcolén 3682, Viña del Mar</p>
 
     <div class="section">
@@ -183,7 +166,7 @@
     </div>
 
     <div class="section">
-      <p><strong>Tu presencia es el mejor regalo</strong></p>
+      <p class="gold"><strong>Tu presencia es el mejor regalo</strong></p>
       <p>Si deseas hacernos un aporte:</p>
 
       <div class="bank" id="bankData">
