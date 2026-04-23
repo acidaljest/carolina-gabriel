@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carolina & Gabriel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0b0b0b;
+      color: #eaeaea;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 420px;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-weight: 300;
+      font-size: 16px;
+      margin-bottom: 32px;
+      letter-spacing: 2px;
+    }
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: #444;
+      margin: 24px auto;
+    }
+    .section {
+      margin-top: 32px;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 20px;
+      border: 1px solid #888;
+      color: #eaeaea;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    .button:hover {
+      background: #eaeaea;
+      color: #0b0b0b;
+    }
+    .bank {
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-top: 16px;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 13px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Carolina & Gabriel</h1>
+    <h2>NOS CASAMOS</h2>
+
+    <div class="divider"></div>
+
+    <p>Sábado 23 de mayo · 15:00 hrs<br>
+    Corcolén 3682, Viña del Mar</p>
+
+    <div class="section">
+      <p>Confirma tu asistencia</p>
+      <a class="button" href="https://forms.gle/ietDGhm2AVEjUaZV7" target="_blank">Confirmar asistencia</a>
+    </div>
+
+    <div class="section">
+      <p><strong>Tu presencia es el mejor regalo</strong></p>
+      <p>Si deseas hacernos un aporte:</p>
+
+      <div class="bank" id="bankData">
+        Nombre: Carolina Elizabeth Zárate Infante<br>
+        RUT: 15.383.002-9<br>
+        Banco: Tenpo<br>
+        Tipo: Cuenta Vista<br>
+        Cuenta: 111115383002<br>
+        Correo: carolinazarateinfante@gmail.com
+      </div>
+
+      <a class="button" onclick="copyData()">Copiar datos</a>
+    </div>
+
+    <div class="footer">
+      Nada tradicional. Todo real.
+    </div>
+  </div>
+
+  <script>
+    function copyData() {
+      const text = document.getElementById('bankData').innerText;
+      navigator.clipboard.writeText(text);
+      alert('Datos copiados');
+    }
+  </script>
+</body>
+</html>
